@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+	<head>
+    <meta charset="utf-8">
+		<title>jamesgoca Coffee Tracker</title>
+
+		<meta name="description" content="A list of all the coffees jamesgoca has consumed.">
+
+		<link rel="stylesheet" href="styles.css">
+
+		<link rel="icon" href="data:,">
+	</head>
+	<body>
+		<main>
+			<h1>jamesgoca Coffees</h1>
+			<section>
+				<h2>Daily Summary</h2>
+				<p>I have consumed {{ coffees_today }} coffees today.</p>
+				<h2>Coffee History</h2>
+				<table style="width:100%">
+					<tr>
+						<th>Name</th>
+						<th>Personal Rating</th>
+						<th style="width:30%">Notes</th>
+						<th>Date</th>
+						<th>Blend</th>
+						<th>Image</th>
+					</tr>
+					{% for c in coffees %}
+					<tr>
+						<td>{{ c["fields"]["Name"] }}</td>
+						<td>{{ c["fields"]["Personal Rating"] }}</td>
+						<td>{{ c["fields"]["Notes"] }}</td>
+						<td>{{ c["fields"]["Date"] }}</td>
+						<td>{{ c["fields"]["Blend"] }}</td>
+						<td>{% if c["fields"]["Image"] %}<a href='{{ c["fields"]["Image"][0]["url"] }}'>Click to view image</a>{% endif %}</td>
+					</tr>
+					{% endfor %}
+				</table> 
+			</section>
+		</main>
+		<footer>
+			<p>Created by <a href="https://jamesg.app">jamesgoca</a>. Site statically generated. Last updated {{ today }}.</p>
+		</footer>
+	</body>
+</html>
