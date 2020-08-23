@@ -14,8 +14,11 @@
 		<main>
 			<h1>jamesgoca Coffees</h1>
 			<section>
-				<h2>Daily Summary</h2>
-				<p>I have consumed {{ coffees_today }} coffees today.</p>
+				<p>I keep a running log of all the coffees that I drink. You can view this log below. The log starts from yesterday because this site is only scheduled to update once per day and I record my coffees at different times throughout the day.</p>
+				<h2>Yesterday's Summary</h2>
+				<p>I consumed {{ coffees_yesterday }} coffee{% if coffees_yesterday > 1 %}s{% endif %} yesterday. {% if at_home_count > 0 %} {% if coffees_yesterday - at_home_count == 0 %}All{% else %}{{ at_home_count }}{% endif %} of those coffees were consumed at home. {% endif %} {% if coffees_yesterday - at_home_count > 0 %} {% if at_home_count == 0 %}All{% else %}{{ coffees_yesterday - at_home_count }}{% endif %} were consumed in cafes or coffee houses. {% endif %}</p>
+
+				<p>I consumed {{ coffees_day_before_yesterday_count }} coffee{% if coffees_day_before_yesterday_count > 1 %}s{% endif %} the day before.</p>
 				<h2>Coffee History</h2>
 				<table style="width:100%">
 					<tr>
@@ -23,7 +26,7 @@
 						<th>Personal Rating</th>
 						<th style="width:30%">Notes</th>
 						<th>Date</th>
-						<th>Blend</th>
+						<th style="width:10%">Blend</th>
 						<th>Image</th>
 					</tr>
 					{% for c in coffees %}
@@ -40,7 +43,7 @@
 			</section>
 		</main>
 		<footer>
-			<p>Created by <a href="https://jamesg.app">jamesgoca</a>. Site statically generated. Last updated {{ today }}.</p>
+			<p>Created by <a href="https://jamesg.app">jamesgoca</a>. Site statically generated. Last updated {{ yesterday }}.</p>
 		</footer>
 	</body>
 </html>
