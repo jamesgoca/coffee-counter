@@ -6,14 +6,14 @@ Hosted at [coffee.jamesg.app](https://coffee.jamesg.app).
 
 ## Screenshot
 
-![A photo of the Coffee Counter website](https://github.com/jamesgoca/jamesg-coffee/blob/master/screenshot.png?raw=true)
+![A photo of the Coffee Counter website](https://github.com/jamesgoca/coffee-counter/blob/master/screenshot.png?raw=true)
 
 ## Installation
 
 First, clone this repository:
 
 ```
-git clone https://github.com/jamesgoca/jamesg-coffee
+git clone https://github.com/jamesgoca/coffee-counter
 cd jamesg-coffee
 ```
 
@@ -41,4 +41,4 @@ python3 app.py
 
 ## License
 
-This project is licensed under an MIT License. View the license in [LICENSE](https://github.com/jamesgoca/jamesg-coffee/blob/master/LICENSE).
+This project is licensed under an MIT License. View the license in [LICENSE](https://github.com/jamesgoca/coffee-counter/blob/master/LICENSE).
