@@ -13,7 +13,7 @@ def get_data():
 	
 	auth = { "Authorization": "Bearer {}".format(token) }
 
-	attributes = requests.get("https://api.airtable.com/v0/appoPJiqsrQ3BSRto/Coffees?view=All%20Brews", headers=auth)
+	attributes = requests.get(os.environ.get("base"), headers=auth)
 
 	attributes_as_json = attributes.json()
 
